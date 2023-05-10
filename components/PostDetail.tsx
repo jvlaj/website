@@ -1,8 +1,10 @@
 // import { Post } from "@/types";
+import { Post } from "@/.contentlayer/generated";
+
 
 import Link from "next/link";
 
-export default function PostDetail(post) {
+export default function PostDetail(post: Post) {
   return (
     <article className="mb-4 gap-6 px-10 hover:underline">
       <Link href={post.slug}>

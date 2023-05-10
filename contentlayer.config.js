@@ -1,5 +1,17 @@
 import { defineDocumentType, makeSource } from 'contentlayer/source-files'
 
+/** @type {import('contentlayer/source-files').ComputedFields} */
+const computedFields = {
+  slug: {
+    type: "string",
+    resolve: (doc) => `/${doc._raw.flattenedPath}`,
+  },
+  slugAsParams: {
+    type: "string",
+    resolve: (doc) => doc._raw.flattenedPath.split("/").slice(1).join("/"),
+  },
+}
+
 export const Post = defineDocumentType(() => ({
   name: 'Post',
   filePathPattern: `posts/**/*.mdx`,
@@ -32,12 +44,7 @@ export const Post = defineDocumentType(() => ({
       required: false,
     }
   },
-  computedFields: {
-    slug: {
-      type: 'string',
-      resolve: (post) => `/posts/${post._raw.flattenedPath}`,
-    },
-  },
+  computedFields,
 }))
 
 export default makeSource({

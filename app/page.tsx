@@ -12,18 +12,16 @@ export default async function Home() {
                     Hello, friend.
                 </h1>
                 <p className="justify-evenly leading-relaxed tracking-tight text-slate-700">
-                    I’m a
+                    I&apos;m <span className="rounded-full border-slate-700 bg-slate-900 p-1 font-bold text-gray-50">Jason Vlajankov</span>, a
                     {/* <span className="rounded-full border-slate-700 bg-slate-900 p-1 font-bold text-gray-50"> */}
                     {/*   full stack  */}
                     {/* </span> { // uncomment when become full stack} */} software
-                    engineer, based in{" "}
-                    <span className="rounded-full border-slate-700 bg-slate-900 p-1 font-bold text-gray-50">
-                        Melbourne, Australia
-                    </span>
+                    engineer based in{" "}
+                        <i>Melbourne, Australia</i>
                     . At the moment, I&apos;m focused on learning more about full stack
                     development on the <span className="italic">web</span>.
                 </p>
-                <p className="border-t border-slate-100 py-4 pt-12">
+                <p className="border-t border-slate-400 py-4 pt-6">
                     <span className="rounded-lg border-slate-300 p-1 font-mono">
                         jvlaj.com{""}
                     </span>{" "}
