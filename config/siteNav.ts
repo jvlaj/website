@@ -14,10 +14,5 @@ export const siteNav: NavItems = {
       title: "About",
       url: "/",
     },
-    {
-      title: "nuke.sys",
-      url: "/nuke",
-      disabled: true,
-    },
   ],
 };

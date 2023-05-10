@@ -14,8 +14,8 @@ export default function NavBar({ items }: NavItems) {
   }
 
   return (
-    <nav className="flex items-center justify-between px-6 py-3">
-      <div>
+    <nav className="container mx-auto flex items-center justify-between mb-6">
+      <div className="justify-start">
         <Link href="/">
           <Icons.chevron />
         </Link>
