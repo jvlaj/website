@@ -1,0 +1,40 @@
+---
+title: "Evaluating the Safety of Autonomous Vehicles"
+date: "2022-10-05"
+author: "Jason Vlajankov"
+tags: ["AI", "Self-Driving Cars", "Linux", "Docker", "Python", "Bash"]
+description: "An assessment toolkit to help make safe, self-driving cars a reality."
+---
+
+I was part of a small team of developers that designed and implemented <b><a href="https://github.com/rjunderwood/avtestkit">AVTestKit</a></b>, a framework that assesses how safe a self-driving AI is in simulated, pre-crash scenarios.
+
+The software involved the following technology:
+- Python for the Assessment Toolkit; interacting with CARLA API
+- Bash scripting to patch Docker/ROS processes
+- CARLA to simulate test scenarios
+- Docker for CARLA-Autoware integration
+- Ubuntu Linux
+
+![Loading Autoware Docker and CARLA simulator for testing.](/images/loading-autoware.png)
+
+<hr />
+
+> AVTestKit was built as part of a large capstone project that operated over ~24 weeks during my final year of university.
+
+We were tasked by our client to develop a toolkit for testing the safety of self-driving AIs (like Autoware[^1]) in different scenarios, gaining information on their weaknesses during simulations.
+
+To get a better idea about how these types of systems work, we began information acquisition about autonomous vehicles. Researching several articles, taking/sharing notes, and brainstorming approaches in our weekly meetings.
+
+To meet our client's expectations, and to ensure our project's schedule was on track, we wrote a number of documents to adhere to. This included project plans, software specifications, architectural plans, etc. This would help us start the direction of our development, and provide us with a guidance when lost.
+
+The scenarios we designed were primarily based off of existing, real-world crash report data. For example, a common type of crash is a "red-light" type. A vehicle illegally runs a red light and collides with another vehicle crossing that intersection perpendicularly. This is one scenario we simulated in the toolkit.
+
+To test how the self-driving system responds in these scenarios, we utilised metamorphic testing[^2], tracking a number of different variables (such as weather type, speed of vehicles, vehicle types, etc), and testing these scenarios many times to determine if and how the results were different than expected.
+
+We analysed the data and drafted a research paper that highlighted the software testing techniques used, as well as the findings. We explored the highest failing test cases, comparing the results to our expectations; looking at the most impactful variables, and presenting hypotheses for why this may be happening.
+
+
+![The development team showing off our work at the project expo. 💪🚀](/images/IMG_4494.jpg)
+
+[^1]: [Autoware](https://github.com/autowarefoundation/autoware) is an "open-source software stack for self-driving vehicles, built on ROS".
+[^2]: [Metamorphic Testing](https://en.wikipedia.org/wiki/Metamorphic_testing) is a testing methodology that helps determine whether actual outcomes meet our expectations via a set of properties (metamorphic relations).

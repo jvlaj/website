@@ -5,6 +5,7 @@ import "../styles/global.css";
 import Footer from "@/components/Footer";
 import NavBar from "@/components/NavBar";
 import { siteNav } from "@/config/siteNav";
+import Head from "next/head";
 
 const fontInter = Inter({
   subsets: ["latin"],
@@ -29,7 +30,9 @@ export default function RootLayout({
         fontInter.variable
       )}
     >
-      <head />
+      <Head>
+        <link rel="icon" href="/favicon.ico" />
+      </Head>
       <body className="m-12 md:m-16 lg:m-20">
         <section className="container mx-auto my-auto items-center justify-center gap-6 pb-8 pt-6 md:pb-12 md:pt-10 lg:pb-24 lg:pt-16 w-[24rem] md:w-[36rem] lg:w-[48rem] max-w-5xl">
         <NavBar items={siteNav.items} />
