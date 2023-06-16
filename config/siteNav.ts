@@ -11,6 +11,10 @@ export const siteNav: NavItems = {
       url: "/projects",
     },
     {
+      title: "Contact",
+      url: "/contact",
+    },
+    {
       title: "About",
       url: "/",
     },

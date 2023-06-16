@@ -31,7 +31,7 @@ export default function RootLayout({
       )}
     >
       <Head>
-        <link rel="icon" href="/favicon.ico" />
+        <link rel="icon" href="/public/favicon.ico" />
       </Head>
       <body className="m-12 md:m-16 lg:m-20">
         <section className="container mx-auto my-auto items-center justify-center gap-6 pb-8 pt-6 md:pb-12 md:pt-10 lg:pb-24 lg:pt-16 w-[24rem] md:w-[36rem] lg:w-[48rem] max-w-5xl">
