@@ -51,22 +51,22 @@ function ContactForm({className, ...props}: ContactFormProps) {
         <motion.div className={className}>
             <form onSubmit={(e) => {
                 handleSubmit(e)
-            }} className="rounded-lg flex flex-col px-8 py-8 shadow-xl dark:bg-slate-500">
-                <h1 className="text-xl font-bold dark:text-gray-50">Shoot me a message</h1>
+            }} className="rounded-lg flex flex-col px-8 py-8 shadow-xl ">
+                <h1 className="text-xl font-bold ">Shoot me a message</h1>
 
-                <label htmlFor="name" className="text-gray-500 font-light mt-8 dark:text-gray-50">Name</label>
+                <label htmlFor="name" className="text-gray-500 font-light mt-8 ">Name</label>
                 <input type="text" name="name" value={name} onChange={(e) => setName((e.target.value))}
                        className="bg-transparent border-b py-2 pl-4 focus:outline-none focus:rounded-md focus:ring-1 ring-slate-500 font-light text-gray-500"/>
 
-                <label htmlFor="email" className="text-gray-500 font-light mt-4 dark:text-gray-50">Email</label>
+                <label htmlFor="email" className="text-gray-500 font-light mt-4 ">Email</label>
                 <input type="email" name="email" value={email} onChange={(e) => setEmail((e.target.value))}
                        className="bg-transparent border-b py-2 pl-4 focus:outline-none focus:rounded-md focus:ring-1 ring-slate-500 font-light text-gray-500"/>
 
-                <label htmlFor="subject" className="text-gray-500 font-light mt-4 dark:text-gray-50">Subject</label>
+                <label htmlFor="subject" className="text-gray-500 font-light mt-4 ">Subject</label>
                 <input type="text" name="subject" value={subject} onChange={(e) => setSubject((e.target.value))}
                        className="bg-transparent border-b py-2 pl-4 focus:outline-none focus:rounded-md focus:ring-1 ring-slate-500 font-light text-gray-500"/>
 
-                <label htmlFor="message" className="text-gray-500 font-light mt-4 dark:text-gray-50">Message</label>
+                <label htmlFor="message" className="text-gray-500 font-light mt-4 ">Message</label>
                 <textarea name="message" value={message} onChange={(e) => setMessage((e.target.value))}
                           className="bg-transparent border-b py-2 pl-4 focus:outline-none focus:rounded-md focus:ring-1 ring-slate-500 font-light text-gray-500"></textarea>
                 <div className="flex flex-row items-center justify-start">

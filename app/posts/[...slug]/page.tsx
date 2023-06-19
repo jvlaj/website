@@ -30,7 +30,7 @@ export async function generateMetadata({
   }
 
   return {
-    title: post.title,
+    title: `jvlaj | ${post.title}`,
     description: post.description,
   };
 }
