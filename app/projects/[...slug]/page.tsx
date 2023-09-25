@@ -35,7 +35,9 @@ export async function generateMetadata({
   };
 }
 
-export async function generateStaticParams(): Promise<ProjectProps["params"][]> {
+export async function generateStaticParams(): Promise<
+  ProjectProps["params"][]
+> {
   return allProjects.map((project) => ({
     slug: project.slugAsParams.split("/"),
   }));
@@ -49,12 +51,10 @@ export default async function ProjectPage({ params }: ProjectProps) {
   }
 
   return (
-    <article className="prose lg:prose-xl py-6">
+    <article className="prose py-6 lg:prose-xl">
       <h1 className="mb-2">{project.title}</h1>
       {project.description && (
-        <p className="mt-0 text-xl text-slate-700 dark:text-slate-200">
-          {project.description}
-        </p>
+        <p className="mt-0 text-xl text-slate-700">{project.description}</p>
       )}
       <hr className="my-4" />
       <Mdx code={project.body.code} />

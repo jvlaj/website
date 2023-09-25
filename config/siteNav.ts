@@ -3,6 +3,10 @@ import { NavItems } from "@/types";
 export const siteNav: NavItems = {
   items: [
     {
+      title: "Home",
+      url: "/",
+    },
+    {
       title: "Posts",
       url: "/posts",
     },
@@ -10,13 +14,9 @@ export const siteNav: NavItems = {
       title: "Projects",
       url: "/projects",
     },
-    {
-      title: "Contact",
-      url: "/contact",
-    },
-    {
-      title: "About",
-      url: "/",
-    },
+    // {
+    //   title: "Contact",
+    //   url: "/contact",
+    // }
   ],
 };

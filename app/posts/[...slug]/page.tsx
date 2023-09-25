@@ -49,12 +49,10 @@ export default async function PostPage({ params }: PostProps) {
   }
 
   return (
-    <article className="prose lg:prose-xl py-6">
+    <article className="prose py-6 lg:prose-xl">
       <h1 className="mb-2">{post.title}</h1>
       {post.description && (
-        <p className="mt-0 text-xl text-slate-700 dark:text-slate-200">
-          {post.description}
-        </p>
+        <p className="mt-0 text-xl text-slate-700">{post.description}</p>
       )}
       <hr className="my-4" />
       <Mdx code={post.body.code} />
