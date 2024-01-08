@@ -7,6 +7,10 @@ export default function sitemap(): MetadataRoute.Sitemap {
       lastModified: new Date(),
     },
     {
+      url: 'https://jvlaj.com/journal',
+      lastModified: new Date(),
+    },
+    {
       url: 'https://jvlaj.com/posts',
       lastModified: new Date(),
     },

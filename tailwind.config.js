@@ -1,4 +1,5 @@
 const { transform } = require("typescript");
+const {Alice} = require("next/dist/compiled/@next/font/dist/google");
 
 /** @type {import('tailwindcss').Config} */
 module.exports = {
@@ -7,6 +8,7 @@ module.exports = {
     "./components/**/*.{js,ts,jsx,tsx}",
     "./app/**/*.{js,ts,jsx,tsx}",
   ],
+  plugins: [require("@tailwindcss/typography")],
   theme: {
     extend: {
       minWidth: {
@@ -23,5 +25,4 @@ module.exports = {
       },
     },
   },
-  plugins: [require("@tailwindcss/typography")],
 };

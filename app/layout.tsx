@@ -14,7 +14,7 @@ const fontInter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: "Jason Vlajankov | jvlaj",
+  title: "jvlaj",
   description:
     "Jason Vlajankov's personal software engineering website, blog, and portfolio.",
   generator: "Next.js",
