@@ -15,7 +15,7 @@ export default function NavBar({ items }: NavItems) {
 
   return (
     <nav className="container mx-auto mb-6 flex items-center justify-between">
-      <div className="flex w-3/5 flex-grow justify-between">
+      <div className="flex flex-grow justify-between">
         {items.map((item, index) => (
           <Link
             key={index}
@@ -27,20 +27,7 @@ export default function NavBar({ items }: NavItems) {
               "flex-grow text-center"
             )}
           >
-            {item.title === "Home" ? (
-              // Render the chevron icon if the item is "Home"
-              <span
-                className={clsx(
-                  "inline-block flex-shrink-0 border-b-2 border-transparent hover:border-current",
-                  path == "/" && "border-current"
-                )}
-              >
-                <Icons.chevron />
-              </span>
-            ) : (
-              // Otherwise, render the item title
               <span>{item.title}</span>
-            )}
           </Link>
         ))}
       </div>

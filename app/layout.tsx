@@ -65,7 +65,7 @@ export default function RootLayout({
         <link rel="icon" href="/favicon.ico" type="image/png" sizes="any" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
       </Head>
-      <body className="mx-auto w-full max-w-screen-md p-4 md:w-[36rem] lg:w-[48rem]">
+      <body className="mx-auto h-screen w-full max-w-screen-md p-4 md:w-[36rem] lg:w-[48rem]">
         <div className="container ">
           <NavBar items={siteNav.items} />
           {children}
