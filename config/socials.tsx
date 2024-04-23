@@ -1,5 +1,5 @@
 import { NavItems } from "@/types";
-import { Github, Linkedin, Mail, Twitter, FileText} from "lucide-react";
+import { Github, Linkedin, Mail, Twitter, FileText,} from "lucide-react";
 
 export const mySocials: NavItems = {
   items: [
@@ -23,10 +23,10 @@ export const mySocials: NavItems = {
       url: "mailto:jvlaj@proton.me",
       icon: Mail,
     },
-    {
-      title: "resume",
-      url: "/resume.pdf",
-      icon: FileText
-    }
+    // {
+    //   title: "resume",
+    //   url: "/resume.pdf",
+    //   icon: FileText
+    // }
   ],
 };

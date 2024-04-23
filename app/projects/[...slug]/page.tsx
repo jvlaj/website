@@ -51,7 +51,11 @@ export default async function ProjectPage({ params }: ProjectProps) {
   }
 
   return (
-    <article className="prose py-6 lg:prose-xl">
+    <div>
+      <section className="bg-gray-100 mx-auto container px-8 md:px-12 py-8 md:py-16 lg:py-24 shadow-xl">
+        <div
+          className="">
+    <article className="prose mx-auto py-6 lg:prose-xl flex-row justify-center  items-center gap-6 lg:grid-cols-[1fr_600px] lg:gap-12 xl:grid-cols-[1fr_900px]">
       <h1 className="mb-2">{project.title}</h1>
       {project.description && (
         <p className="mt-0 text-xl text-slate-700">{project.description}</p>
@@ -59,5 +63,8 @@ export default async function ProjectPage({ params }: ProjectProps) {
       <hr className="my-4" />
       <Mdx code={project.body.code} />
     </article>
+        </div>
+      </section>
+    </div>
   );
 }

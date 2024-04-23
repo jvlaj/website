@@ -10,7 +10,7 @@ import { Metadata } from "next";
 
 const fontInter = Inter({
   subsets: ["latin"],
-  variable: "--font-inter",
+  variable: "--font-inter"
 });
 
 export const metadata: Metadata = {
@@ -30,7 +30,7 @@ export const metadata: Metadata = {
     "Website",
     "Next.js",
     "React",
-    "JavaScript",
+    "JavaScript"
   ],
   authors: [{ name: "Jason", url: "https://jvlaj.com" }],
   colorScheme: "light",
@@ -39,40 +39,38 @@ export const metadata: Metadata = {
   formatDetection: {
     email: false,
     address: false,
-    telephone: false,
+    telephone: false
   },
   viewport: {
     width: "device-width",
     initialScale: 1,
-    maximumScale: 1,
-  },
+    maximumScale: 1
+  }
 };
 
 export default function RootLayout({
-  children,
-}: {
+                                     children
+                                   }: {
   children: React.ReactNode;
 }) {
   return (
     <html
       lang="en"
       className={clsx(
-        "bg-gray-50 font-sans text-slate-900 antialiased",
+        "font-sans antialiased",
         fontInter.variable
       )}
     >
-      <Head>
-        <link rel="icon" href="/favicon.ico" type="image/png" sizes="any" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-      </Head>
-      <body className="mx-auto h-screen w-full max-w-screen-md p-4 md:w-[36rem] lg:w-[48rem]">
-        <div className="container ">
-          <NavBar items={siteNav.items} />
-          {children}
-          <Footer />
-        </div>
-        <Analytics />
-      </body>
+    <Head>
+      <link rel="icon" href="/favicon.ico" type="image/png" sizes="any" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    </Head>
+    <body className="bg-gray-100">
+    <NavBar items={siteNav.items} />
+    {children}
+    <Footer />
+    <Analytics />
+    </body>
     </html>
   );
 }
