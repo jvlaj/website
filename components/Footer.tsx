@@ -6,12 +6,6 @@ export default function Footer() {
     <footer
       className="max-w-[600px] mx-auto container mt-8 justify-center items-center flex flex-col m-8">
       <div className="flex justify-center mb-4">
-        <Link href="https://blog.jvlaj.com"
-              className="px-4 py-2 text-gray-800 hover:text-gray-100 hover:bg-gray-800"
-              rel="noopener"
-        >
-          blog
-        </Link>
         {mySocials.items.map((social, key, index) => (
           <Link
             key={key}

@@ -13,14 +13,14 @@ export const mySocials: NavItems = {
       url: "https://github.com/jvlaj",
       icon: Github,
     },
-    /* {
-     *   title: "linkedin",
-     *   url: "https://linkedin.com/in/jvlaj",
-     *   icon: Linkedin,
-     * }, */
+    {
+      title: "linkedin",
+      url: "https://linkedin.com/in/jvlaj",
+      icon: Linkedin,
+    },
     {
       title: "email",
-      url: "mailto:jvlaj@proton.me",
+      url: "mailto:jvlajankov@gmail.com",
       icon: Mail,
     },
     // {

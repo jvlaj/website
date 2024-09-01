@@ -1,6 +1,4 @@
-Blog/Portfolio Site.
-
-Combination blog/portfolio website and place for me to mess with stuff.
+Professional portfolio website.
 
 This project uses:
 - Bootstrapped with Next.JS 13+ via [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app)
