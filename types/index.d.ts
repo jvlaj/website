@@ -19,3 +19,8 @@ export type NavItem = {
   icon?: LucideIcon
   disabled?: boolean;
 }
+
+type Header = {
+  title: string;
+  description: string;
+};
