@@ -1,34 +1,32 @@
 import { allProjects } from "@/.contentlayer/generated";
 import ProjectDetail from "@/components/ProjectDetail";
 import { compareDesc } from "date-fns";
-import { clsx } from "clsx";
+import type { CSSProperties } from "react";
+
+const fadeInStyle: CSSProperties = {
+  animation: "fadeIn 0.5s ease-in-out",
+};
 
 export default function Projects() {
-  const projects = allProjects.sort((a, b) => compareDesc(new Date(a.date), new Date(b.date)));
-  let myItems;
+  const projects = [...allProjects].sort((a, b) =>
+    compareDesc(new Date(a.date), new Date(b.date))
+  );
+
   return (
-    <div>
-      <section className="bg-gray-100 mx-auto container px-8 md:px-12 py-12 md:py-24 lg:py-32  shadow-xl m-4">
-        <div
-          className="flex-row items-center gap-6 lg:grid-cols-[1fr_600px] lg:gap-12 xl:grid-cols-[1fr_900px]">
-          <h1
-            className="pb-8 pt-4 text-2xl font-bold leading-[1] tracking-tighter sm:text-4xl md:text-5xl"
-            style={{
-              animation: `fadeIn 0.5s ease-in-out`
-            }}>
-            Projects
-          </h1>
-          {projects.map((project, index) => <div
-              key={index}
-              style={{
-                animation: `fadeIn 0.5s ease-in-out`
-              }}
-            >
-              <ProjectDetail key={project._id} {...project} />
-            </div>
-          )}
-        </div>
-      </section>
-    </div>
+    <section
+      style={fadeInStyle}
+      className="container m-4 mx-auto px-8 py-12 shadow-xl md:px-12 md:py-24 lg:py-32"
+    >
+      <div className="flex flex-col gap-6">
+        <h1 className="pb-2 pt-4 text-2xl font-bold tracking-tighter sm:text-4xl md:text-5xl">
+          Projects
+        </h1>
+        {projects.map((project) => (
+          <div key={project._id} style={fadeInStyle}>
+            <ProjectDetail {...project} />
+          </div>
+        ))}
+      </div>
+    </section>
   );
 }

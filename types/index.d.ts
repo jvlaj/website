@@ -11,6 +11,7 @@ export type Skills = {
 }
 export type NavItems = {
   items: NavItem[];
+  className?: string;
 }
 
 export type NavItem = {
@@ -24,3 +25,6 @@ type Header = {
   title: string;
   description: string;
 };
+
+export type Page = {
+}

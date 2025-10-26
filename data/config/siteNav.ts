@@ -10,5 +10,9 @@ export const siteNav: NavItems = {
       title: "Projects",
       url: "/projects",
     },
+    {
+      title: "Resume",
+      url: "/resume"
+    }
   ],
 };

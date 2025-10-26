@@ -1,28 +1,18 @@
-const { transform } = require("typescript");
-const {Alice} = require("next/dist/compiled/@next/font/dist/google");
-
 /** @type {import('tailwindcss').Config} */
 module.exports = {
   content: [
-    "./pages/**/*.{js,ts,jsx,tsx}",
-    "./components/**/*.{js,ts,jsx,tsx}",
-    "./app/**/*.{js,ts,jsx,tsx}",
+    "./app/**/*.{js,ts,jsx,tsx,md,mdx}",
+    "./components/**/*.{js,ts,jsx,tsx,md,mdx}",
+    "./content/**/*.{md,mdx}",
   ],
-  plugins: [require("@tailwindcss/typography")],
+  darkMode: "class",
   theme: {
     extend: {
-      minWidth: {
-        480: "480px",
-      },
-      animation: {
-        fadeIn: "fade-in 1s ease-in-out",
-        bounceArrow: "bounce-arrow 1s ease-in-out",
-      },
-      backgroundImage: {
-        "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
-        "gradient-conic":
-          "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
+      dropShadow: {
+        "icon-dark": "2px 2px 2px rgb(0 0 0 / 0.4)",
+        "icon-light": "3px 3px 6px rgb(255 255 150 / 0.8)",
       },
     },
   },
+  plugins: [require("@tailwindcss/typography")],
 };

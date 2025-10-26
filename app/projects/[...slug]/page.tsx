@@ -52,17 +52,20 @@ export default async function ProjectPage({ params }: ProjectProps) {
 
   return (
     <div>
-      <section className="bg-gray-100 mx-auto container px-8 md:px-12 py-8 md:py-16 lg:py-24 shadow-xl">
-        <div
-          className="">
-    <article className="prose mx-auto py-6 lg:prose-xl flex-row justify-center  items-center gap-6 lg:grid-cols-[1fr_600px] lg:gap-12 xl:grid-cols-[1fr_900px]">
-      <h1 className="mb-2">{project.title}</h1>
-      {project.description && (
-        <p className="mt-0 text-xl text-slate-700">{project.description}</p>
-      )}
-      <hr className="my-4" />
-      <Mdx code={project.body.code} />
-    </article>
+      <section className="container mx-auto shadow-xl md:px-12 md:py-16 lg:py-24">
+        <div className="">
+          <article className="prose mx-auto flex-row items-center justify-center gap-6 py-6  dark:prose-invert lg:prose-xl lg:grid-cols-[1fr_600px] lg:gap-12 xl:grid-cols-[1fr_900px]">
+            <h1 className="mb-2 text-gray-900 dark:text-gray-100">
+              {project.title}
+            </h1>
+            {project.description && (
+              <p className="mt-0 text-xl text-slate-700 dark:text-slate-300">
+                {project.description}
+              </p>
+            )}
+            <hr className="my-4" />
+            <Mdx code={project.body.code} />
+          </article>
         </div>
       </section>
     </div>

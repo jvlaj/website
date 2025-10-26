@@ -1,12 +1,9 @@
-import { clsx } from "clsx";
 import { Inter } from "next/font/google";
 import Analytics from "@/components/Analytics";
-import "../styles/global.css";
-// import Footer from "@/components/Footer";
+import "@/styles/global.css";
 import NavBar from "@/components/NavBar";
-import { siteNav } from "@/data/config/siteNav";
-import Head from "next/head";
 import { Metadata } from "next";
+import type { ReactNode } from "react";
 
 const fontInter = Inter({
   subsets: ["latin"],
@@ -33,7 +30,7 @@ export const metadata: Metadata = {
     "JavaScript",
   ],
   authors: [{ name: "Jason", url: "https://jvlaj.com" }],
-  colorScheme: "light",
+  colorScheme: "light dark",
   creator: "Jason Vlajankov",
   publisher: "jvlaj.com",
   formatDetection: {
@@ -48,24 +45,37 @@ export const metadata: Metadata = {
   },
 };
 
+// Inline script to set initial theme before React hydration
+const setInitialTheme = `(function() {
+  try {
+    const theme = localStorage.getItem('theme');
+    if (theme === 'dark') {
+      document.documentElement.classList.add('dark');
+    } else if (theme === 'light') {
+      document.documentElement.classList.remove('dark');
+    } else {
+      if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        document.documentElement.classList.add('dark');
+      }
+    }
+  } catch (e) {}
+})();`;
+
 export default function RootLayout({
   children,
 }: {
-  children: React.ReactNode;
+  children: ReactNode;
 }) {
   return (
-    <html
-      lang="en"
-      className={clsx("font-sans antialiased", fontInter.variable)}
-    >
-      <Head>
+    <html lang="en" className={fontInter.variable}>
+      <head>
         <link rel="icon" href="/favicon.ico" type="image/png" sizes="any" />
+        <script dangerouslySetInnerHTML={{ __html: setInitialTheme }} />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-      </Head>
-      <body className="bg-gray-100">
-        <NavBar items={siteNav.items} />
+      </head>
+      <body className="min-h-screen bg-slate-100 text-slate-800 antialiased dark:bg-slate-800 dark:text-slate-200">
+        <NavBar />
         {children}
-        {/* <Footer /> */}
         <Analytics />
       </body>
     </html>

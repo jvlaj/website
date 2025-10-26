@@ -1,41 +1,61 @@
 "use client";
 
-import { NavItems } from "@/types";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { Icons } from "./Icons";
 import clsx from "clsx";
+import ThemeToggle from "./ThemeToggle";
+import { siteNav } from "@/data/config/siteNav";
 
-export default function NavBar({ items }: NavItems) {
+export default function NavBar() {
   const path = usePathname();
 
-  if (!items?.length) {
-    return null;
-  }
-
   return (
-    <div className="container flex flex-col gap-2 py-6 md:gap-4 md:flex-row md:items-center md:py-8 lg:gap-6 xl:gap-10 bg-gray-100">
-      <nav className="order-last flex gap-2 md:flex-row md:ml-auto md:gap-4 lg:gap-6  xl:gap-8">
-        {items.map((item, index) => (
-          <Link
-            key={index}
-            href={!item.disabled ? item.url : "#"}
-            className={clsx(
-              "text-lg font-medium hover:underline hover:opacity-50 hover:transition-all text-gray-800 hover:text-gray-900 ",
-              item.disabled && "cursor-not-allowed opacity-50",
-              path === item.url && "underline",
-              "flex-grow text-center"
-            )}
-          >
-            <span>{item.title}</span>
-          </Link>
-        ))}
+    <div
+      className={clsx(
+        "mx-auto flex max-w-5xl flex-col items-center justify-center gap-2 px-4 py-6 md:flex-row md:items-center md:gap-4 md:py-8 lg:gap-6 xl:gap-10"
+      )}
+    >
+      <nav
+        aria-label="Primary"
+        className="flex items-center gap-2 md:flex-row md:gap-4 lg:gap-6 xl:gap-8"
+      >
+        <ThemeToggle />
+        {siteNav.items.map((item) => {
+          const isActive =
+            path === item.url ||
+            (item.url !== "/" && path.startsWith(`${item.url}/`));
+          const isDisabled = item.disabled;
+
+          return (
+            <Link
+              key={item.title}
+              href={!isDisabled ? item.url : "#"}
+              aria-current={isActive ? "page" : undefined}
+              tabIndex={isDisabled ? -1 : undefined}
+              className={clsx(
+                "rounded-full text-base font-medium transition-all duration-300",
+                "transform hover:z-10 hover:-translate-y-1 hover:scale-110",
+                "hover:bg-gray-800 hover:text-gray-300 dark:hover:bg-gray-200 dark:hover:text-gray-600",
+                "rounded-full border border-gray-200 px-4 py-1.5 dark:border-slate-700",
+                isDisabled && "cursor-not-allowed opacity-50",
+                isActive && [
+                  "bg-gray-800 text-gray-200 dark:bg-gray-200 dark:text-gray-800",
+                ]
+              )}
+            >
+              <span>{item.title}</span>
+            </Link>
+          );
+        })}
       </nav>
-      <div className="space-y-2 text-center md:order-last md:text-left">
-        <h1 className="text-3xl font-bold tracking-tighter sm:text-5xl">Jason Vlajankov</h1>
-        <p className="text-gray-500 dark:text-gray-400">Software Guy</p>
+      <div className="space-y-1 text-center">
+        <h1 className="text-xl font-semibold tracking-tight text-gray-900 dark:text-gray-100 sm:text-2xl md:text-3xl">
+          Jason Vlajankov
+        </h1>
+        <p className="text-xs text-gray-600 dark:text-gray-400 sm:text-sm md:text-base">
+          Software Guy
+        </p>
       </div>
     </div>
-  )
-    ;
+  );
 }
